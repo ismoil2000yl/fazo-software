@@ -1,0 +1,435 @@
+.home-component {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #04060A 0%, #091832 100%);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    color: white;
+    padding-top: 10%;
+
+    @include xl {}
+
+    @include lg {
+        height: 500px;
+    }
+
+    @include md {
+        padding-top: 160px;
+        height: 500px;
+    }
+
+    @include sm {
+        padding-top: 150px;
+        height: 100vh;
+    }
+
+    &-box {
+        // display: flex;
+        // flex-direction: column;
+
+        &-title {
+            font-size: 65px;
+            opacity: .9;
+
+            @include lg {
+                font-size: 55px;
+            }
+
+            @include md {
+                font-size: 45px;
+            }
+
+            @include sm {
+                font-size: 35px;
+                text-align: center;
+            }
+        }
+
+        &-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include sm {
+                flex-direction: column-reverse;
+                gap: 1.5rem;
+            }
+
+            &-btn {
+                cursor: pointer;
+                position: relative;
+                display: inline-block;
+                padding: 15px 30px;
+                border: 2px solid #0f0;
+                color: #fff;
+                margin: 60px 0;
+                text-transform: capitalize;
+                font-weight: 600;
+                text-decoration: none;
+                letter-spacing: 2px;
+                -webkit-box-reflect: below 0px linear-gradient(transparent, #0002);
+                transition: .5s;
+                filter: hue-rotate(80deg);
+                transition-delay: 0s;
+
+                span {
+                    position: relative;
+                    z-index: 100;
+                }
+            }
+
+            &-btn:hover {
+                transition-delay: 1.5s;
+                color: #000;
+                box-shadow: 0 0 10px #0f0,
+                    0 0 20px #0f0,
+                    0 0 40px #0f0,
+                    0 0 80px #0f0,
+                    0 0 160px #0f0;
+            }
+
+            &-btn::before {
+                content: '';
+                position: absolute;
+                left: -20px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 2px;
+                background: #0f0;
+                box-shadow: 5px -8px #0f0, 5px 8px #0f0;
+                transition: width .5s, left .5s, height .5s, box-shadow .5s;
+                transition-delay: 1s, .5s, 0s, 0s;
+
+            }
+
+            &-btn:hover::before {
+                width: 60%;
+                height: 100%;
+                left: -2px;
+                box-shadow: 5px 0 0 #0f0, 5px 0 0 #0f0;
+                transition-delay: 0s, 0.5s, 1s, 1s;
+            }
+
+            &-btn::after {
+                content: '';
+                position: absolute;
+                right: -20px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 2px;
+                background: #0f0;
+                box-shadow: -5px -8px #0f0, -5px 8px #0f0;
+                transition: width .5s, left .5s, height .5s, box-shadow .5s;
+                transition-delay: 1s, .5s, 0s, 0s;
+
+            }
+
+            &-btn:hover::after {
+                width: 60%;
+                height: 100%;
+                right: -2px;
+                box-shadow: -5px 0 0 #0f0, -5px 0 0 #0f0;
+                transition-delay: 0s, 0.5s, 1s, 1s;
+            }
+        }
+
+
+    }
+}
+
+.box {
+    position: relative;
+    z-index: 1;
+    width: 300px;
+    height: 300px;
+    backdrop-filter: blur(25px);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    animation: clock 5s ease-in-out infinite;
+    transform: translateY(-40%);
+    animation-delay: -2.5s;
+
+    // @include xxl {
+    //     width: 400px;
+    //     height: 400px;
+    // }
+
+    @include xl {
+        width: 250px;
+        height: 250px;
+        transform: translateY(-35%);
+    }
+
+    @include lg {
+        width: 200px;
+        height: 200px;
+        transform: translateY(-15%);
+    }
+
+    @include md {
+        transform: translateY(-15%);
+    }
+
+    @include sm {
+        transform: translateY(15%);
+    }
+}
+
+.clock {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(transparent, rgba(255, 255, 255, 0.2)), url(/src/assets/images/png/clock.png);
+    background-size: cover;
+    border-radius: 50%;
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: none;
+    border-right: none;
+    box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.1),
+        10px 10px 20px rgba(0, 0, 0, 0.1),
+        0px 40px 50px rgba(0, 0, 0, 0.2);
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 10000;
+}
+
+.hour,
+.min,
+.sec {
+    position: absolute;
+}
+
+.hour,
+.hr {
+    width: 160px;
+    height: 160px;
+
+    @include lg {
+        width: 130px;
+        height: 130px;
+    }
+
+    @include md {
+        width: 130px;
+        height: 130px;
+    }
+
+    @include sm {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+.min,
+.mn {
+    width: 190px;
+    height: 190px;
+
+    @include lg {
+        width: 160px;
+        height: 160px;
+    }
+
+    @include md {
+        width: 160px;
+        height: 160px;
+    }
+
+    @include sm {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+.sec,
+.sc {
+    width: 230px;
+    height: 230px;
+
+    @include lg {
+        width: 180px;
+        height: 180px;
+    }
+
+    @include md {
+        width: 180px;
+        height: 180px;
+    }
+
+    @include sm {
+        width: 180px;
+        height: 180px;
+    }
+
+}
+
+.hr,
+.mn,
+.sc {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background: #ff105e;
+    z-index: 11;
+    border-radius: 6px;
+}
+
+.mn::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: #fff;
+    z-index: 12;
+    border-radius: 6px;
+}
+
+.sc::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background: #fff;
+    z-index: 12;
+    border-radius: 6px;
+}
+
+
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 87%;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.circles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+
+}
+
+.circles li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2) {
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}

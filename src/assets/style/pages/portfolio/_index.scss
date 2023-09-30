@@ -1,0 +1,93 @@
+.portfolio {
+    width: 100%;
+    min-height: 80vh;
+    padding-top: 5%;
+    background-color: #EEEEEE;
+
+    @include md {
+        padding-top: 100px;
+    }
+
+    @include sm {
+        padding-top: 100px;
+    }
+
+    .projects-circles {
+        height: 30vh !important;
+    }
+
+    &__header {
+        background: linear-gradient(to bottom, #04060A 0%, #091832 100%);
+        color: white;
+        width: 100%;
+        min-height: 30vh;
+        display: flex;
+        align-items: center;
+
+        @include lg {
+            min-height: 25vh;
+        }
+
+        @include md {
+            min-height: 25vh;
+        }
+
+        @include sm {
+            min-height: 35vh;
+        }
+
+        &__title {
+            font-size: 16px;
+            opacity: .8;
+            text-transform: capitalize;
+            // text-align: center;
+            line-height: 2.5rem;
+
+            @include sm {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__body {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, #EEEEEE 50%, #cedace 50%);
+
+        &__btns {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2rem;
+            transform: translateY(-25px);
+
+            @include sm {
+                width: 100%;
+            }
+
+            &__btn {
+                padding: 18px 30px;
+                background-color: white;
+                border-radius: 30px;
+                font-size: 16px;
+                transition: all .3s ease-in-out;
+                box-shadow: 10px 15px 7px #E7E7E7;
+                font-weight: 550;
+                color: #414D7D;
+
+                &:focus {
+                    background-color: #304FFF;
+                    color: white;
+                }
+            }
+        }
+
+        &__box {
+            padding-bottom: 2rem;
+        }
+
+    }
+}

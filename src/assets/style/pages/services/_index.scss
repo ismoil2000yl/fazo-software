@@ -1,0 +1,57 @@
+.services__div {
+    width: 100%;
+    min-height: 80vh;
+    padding-top: 5%;
+    background-color: #EEEEEE;
+
+    @include md {
+        padding-top: 100px;
+    }
+
+    @include sm {
+        padding-top: 100px;
+    }
+
+    .projects-circles {
+        height: 30vh !important;
+    }
+
+    &__header {
+        background: linear-gradient(to bottom, #04060A 0%, #091832 100%);
+        color: white;
+        width: 100%;
+        min-height: 30vh;
+        display: flex;
+        align-items: center;
+
+        @include lg {
+            min-height: 25vh;
+        }
+
+        @include md {
+            min-height: 25vh;
+        }
+
+        @include sm {
+            min-height: 35vh;
+        }
+
+        &__title {
+            font-size: 16px;
+            opacity: .8;
+            text-transform: capitalize;
+            // text-align: center;
+            line-height: 2.5rem;
+
+            @include sm {
+                font-size: 16px;
+                text-align: center;
+
+            }
+        }
+    }
+}
+
+.services__body{
+    padding-bottom: 3rem;
+}

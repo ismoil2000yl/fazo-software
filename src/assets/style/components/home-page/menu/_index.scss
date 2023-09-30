@@ -1,0 +1,49 @@
+.menu-modal {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.menu {
+    // background: linear-gradient(to bottom, #04060A 0%, #091832 100%);
+    // background-color: #08152B;
+    // background-color: #091731;
+    background: linear-gradient(135deg, #091731 0%, #314a79 100%);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding-bottom: .5rem;
+
+    &-header {
+        padding: 1rem 0;
+        background-color: white;
+    }
+
+    &-body {
+        padding: 1rem 2rem;
+
+        .nav {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 2rem;
+
+            &-item {
+                padding: 1rem;
+                cursor: pointer;
+                box-shadow: 15px 15px 15px #05080E;
+                border-radius: 8px 25px ;
+                background-color: #091731;
+            }
+
+            &-link {
+                color: white;
+                font-size: 20px;
+            }
+        }
+    }
+}

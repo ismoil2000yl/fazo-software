@@ -1,0 +1,65 @@
+.service {
+    width: 100%;
+    padding-top: 5%;
+    min-height: 100vh;
+
+    @include md {
+        padding-top: 100px;
+    }
+
+    @include sm {
+        padding-top: 100px;
+    }
+
+    &__header {
+        background: linear-gradient(to bottom, #04060A 0%, #091832 100%);
+        color: white;
+        width: 100%;
+        min-height: 30vh;
+        display: flex;
+        align-items: center;
+
+        @include lg {
+            min-height: 25vh;
+        }
+
+        @include md {
+            min-height: 25vh;
+        }
+
+        @include sm {
+            min-height: 25vh;
+        }
+
+        &__title {
+            font-size: 18px;
+            opacity: .8;
+            text-transform: capitalize;
+            line-height: 2.5rem;
+
+            @include sm {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__body {
+        // background: linear-gradient(45deg, #EEEEEE 50%, #cedace 50%);
+        background-color: #EEEEEE;
+        padding: 2rem 0;
+
+        @include md {
+            padding: 1rem;
+        }
+
+        @include sm {
+            padding: 1rem;
+        }
+
+        &__description {
+            font-size: 20px;
+            line-height: 1.8rem;
+            opacity: .8;
+        }
+    }
+}
