@@ -1,7 +1,51 @@
+import axios from 'axios'
 import React from 'react'
+import { useState } from 'react'
 
 const index = () => {
 
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [email, setEmail] = useState("")
+    const [phoneNumber, setPhoneNumber] = useState("")
+    const [message, setMessage] = useState("")
+
+    const [disabledBtn, setDisabledBtn] = useState(false)
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const telegramBotId = "6226001980:AAHEwlYCM-6IPkky8-TOfebSQdyGA-1ICAM"; // replace token with the Bot token you created
+        const chatId = -1001804268604; // Instead of 1111, write the ID of the place where the message should go
+
+        const telegramMessage = `
+        First Name: ${firstName}
+        Last Name: ${lastName}
+        E-mail: ${email}
+        Phone Number: ${phoneNumber}
+        Message: ${message}`;
+
+        try {
+            const response = await axios.post(
+                `https://api.telegram.org/bot${telegramBotId}/sendMessage`,
+                {
+                    chat_id: chatId,
+                    text: telegramMessage,
+                }
+            );
+
+            // console.log(response.data);
+
+            // Reset form fields
+            setFirstName("");
+            setLastName("");
+            setPhoneNumber("");
+            setEmail("");
+            setMessage("");
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
 
     return (
@@ -81,26 +125,60 @@ const index = () => {
                         </h3>
                     </div>
                     <div className="contact__box__form form">
-                        <form action="#">
+                        <form onSubmit={handleSubmit}>
                             <h2 className='form-title'>Bizga xabar yuborish</h2>
                             <div className="form-fields">
                                 <div className="form-group">
-                                    <input type="text" className='form-group-input' placeholder='First Name' />
+                                    <input
+                                        type="text"
+                                        className='form-group-input'
+                                        placeholder='First Name'
+                                        value={firstName}
+                                        onChange={(e) => setFirstName(e.target.value)}
+                                    />
                                 </div>
                                 <div className="form-group">
-                                    <input type="text" className='form-group-input' placeholder='Last Name' />
+                                    <input
+                                        type="text"
+                                        className='form-group-input'
+                                        placeholder='Last Name'
+                                        value={lastName}
+                                        onChange={(e) => setLastName(e.target.value)}
+                                    />
                                 </div>
                                 <div className="form-group">
-                                    <input type="text" className='form-group-input' placeholder='Email' />
+                                    <input
+                                        type="text"
+                                        className='form-group-input'
+                                        placeholder='Email'
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
                                 </div>
                                 <div className="form-group">
-                                    <input type="text" className='form-group-input' placeholder='Phone Number' />
+                                    <input
+                                        type="text"
+                                        className='form-group-input'
+                                        placeholder='Phone Number'
+                                        value={phoneNumber}
+                                        onChange={(e) => setPhoneNumber(e.target.value)}
+                                    />
                                 </div>
                                 <div className="form-group">
-                                    <textarea name="message" className='form-group-input' placeholder='Write your message'></textarea>
+                                    <textarea
+                                        name="message"
+                                        className='form-group-input'
+                                        placeholder='Write your message'
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
+                                    />
                                 </div>
                             </div>
-                            <input type="submit" value={"Send message"} className="submit-button" />
+                            <input
+                                type="submit"
+                                value={"Send message"}
+                                className="submit-button"
+                            />
                         </form>
                     </div>
                 </div>

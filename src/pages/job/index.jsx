@@ -1,6 +1,46 @@
+import axios from 'axios'
 import React from 'react'
+import { useState } from 'react'
 
 const index = () => {
+
+    const [name, setName] = useState("")
+    const [phone, setPhone] = useState("")
+    const [message, setMessage] = useState("")
+
+    const [disabledBtn, setDisabledBtn] = useState(false)
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const telegramBotId = "6226001980:AAHEwlYCM-6IPkky8-TOfebSQdyGA-1ICAM"; // replace token with the Bot token you created
+        const chatId = -1001804268604; // Instead of 1111, write the ID of the place where the message should go
+
+        const telegramMessage = `
+        Name: ${name}
+        Phone: ${phone}
+        Message: ${message}`;
+
+        try {
+            const response = await axios.post(
+                `https://api.telegram.org/bot${telegramBotId}/sendMessage`,
+                {
+                    chat_id: chatId,
+                    text: telegramMessage,
+                }
+            );
+
+            // console.log(response.data);
+
+            // Reset form fields
+            setName("")
+            setPhone("")
+            setMessage("");
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     return (
         <div className='job'>
             <div className="job__header">
@@ -71,15 +111,30 @@ const index = () => {
             </div>
             <div className="container">
                 <div className="job__body">
-                    <form className="job__body__form">
+                    <form className="job__body__form" onSubmit={handleSubmit}>
                         <div className="job__body__form__input">
-                            <input type="text" placeholder='Ismingiz...' />
+                            <input
+                                type="text"
+                                placeholder='Ismingiz...'
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
                         </div>
                         <div className="job__body__form__input">
-                            <input type="text" placeholder='Telefon...' />
+                            <input
+                                type="text"
+                                placeholder='Telefon...'
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                            />
                         </div>
                         <div className="job__body__form__input">
-                            <input type="text" placeholder="O'zingiz xaqingizda yozing..." />
+                            <input
+                                type="text"
+                                placeholder="O'zingiz xaqingizda yozing..."
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                            />
                         </div>
                         <div className="job__body__form__resume">
                             <h3>Resume:</h3>
