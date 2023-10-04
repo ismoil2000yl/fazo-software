@@ -6,7 +6,6 @@ import { useState } from "react";
 const index = () => {
 
 
-
   return (
     <>
       <Header />

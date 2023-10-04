@@ -1,17 +1,33 @@
-import { initialAuth } from "./auth";
+import logger from "redux-logger";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { persistReducer, persistStore } from "redux-persist";
+import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
+import systemReducer from "./system";
 import authReducer from "./auth";
-import { create } from "zustand";
-import {createJSONStorage, persist} from 'zustand/middleware';
 
+const persistConfig = {
+	key: "root",
+	storage
+};
 
-export const useStore = create(
-  persist((set, get) => {
-    return {
-      auth: { ...initialAuth},
-      ...authReducer(set, get),
-    };
-  }, {
-    name: 'storage',
-    storage: createJSONStorage(()=>localStorage)
-  })
-);
+const rootReducer = combineReducers({
+	auth: authReducer,
+	system: systemReducer
+});
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const middleware = [];
+
+if (process.env.NODE_ENV === "development") {
+	middleware.push(logger);
+}
+
+const store = configureStore({
+	reducer: persistedReducer,
+	middleware
+});
+
+const persister = persistStore(store);
+
+export { store, persister };

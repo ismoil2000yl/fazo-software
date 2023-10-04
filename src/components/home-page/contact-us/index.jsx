@@ -99,7 +99,7 @@ const index = () => {
                                 </div>
                                 <div className="form-group">
                                     <input
-                                        type="text"
+                                        type="email"
                                         className='form-group-input'
                                         placeholder='Email'
                                         value={email}
@@ -109,6 +109,7 @@ const index = () => {
                                 <div className="form-group">
                                     <input
                                         type="text"
+                                        defaultValue={"+998"}
                                         className='form-group-input'
                                         placeholder='Phone Number'
                                         value={phoneNumber}

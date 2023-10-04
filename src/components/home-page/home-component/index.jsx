@@ -1,32 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import IconBack from 'assets/images/png/home-img.png'
+import { useNavigate } from 'react-router-dom';
 
 const index = () => {
 
-    const [rotation, setRotation] = useState({
-        hour: 0,
-        minute: 0,
-        second: 0
-    });
+    const navigate = useNavigate()
 
-    const deg = 6;
+    // const [rotation, setRotation] = useState({
+    //     hour: 0,
+    //     minute: 0,
+    //     second: 0
+    // });
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const date = new Date();
-            const hours = date.getHours() * 30;
-            const minutes = date.getMinutes() * deg;
-            const seconds = date.getSeconds() * deg;
+    // const deg = 6;
 
-            setRotation({
-                hour: hours + (minutes / 12),
-                minute: minutes,
-                second: seconds
-            });
-        }, 1000);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         const date = new Date();
+    //         const hours = date.getHours() * 30;
+    //         const minutes = date.getMinutes() * deg;
+    //         const seconds = date.getSeconds() * deg;
 
-        return () => clearInterval(interval);
-    }, []);
+    //         setRotation({
+    //             hour: hours + (minutes / 12),
+    //             minute: minutes,
+    //             second: seconds
+    //         });
+    //     }, 1000);
+
+    //     return () => clearInterval(interval);
+    // }, []);
 
     return (
         <div className='home-component'>
@@ -49,11 +52,11 @@ const index = () => {
                         Agentligi
                     </p>
                     <div className="home-component-box-info">
-                        <button onClick={() => alert("Batafsil ma'lumot")} className='home-component-box-info-btn'>
+                        <button onClick={() => navigate("/about")} className='home-component-box-info-btn'>
                             <span>Batafsil ma'lumot</span>
                         </button>
                         <div className="box">
-                            <div className="clock">
+                            {/* <div className="clock">
                                 <div className="hour">
                                     <div className="hr" id="hr" style={{ transform: `rotateZ(${rotation.hour}deg)` }}></div>
                                 </div>
@@ -63,7 +66,7 @@ const index = () => {
                                 <div className="sec">
                                     <div className="sc" id='sc' style={{ transform: `rotateZ(${rotation.second}deg)` }}></div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

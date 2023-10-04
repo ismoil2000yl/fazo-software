@@ -1,7 +1,11 @@
 import React from 'react'
 import ImgBackground from 'assets/images/png/home-img.png'
+import { useNavigate } from 'react-router-dom'
 
 const index = () => {
+
+    const navigate = useNavigate()
+
     return (
         <div className='main'>
             <ul className="circles">
@@ -24,7 +28,7 @@ const index = () => {
                     </p>
                 </div>
                 <div className="main__btn">
-                    <button onClick={() => alert("Batafsil ma'lumot")} className='main__btn__item'>
+                    <button onClick={() => navigate("/about")} className='main__btn__item'>
                         <span>Batafsil ma'lumot</span>
                     </button>
                 </div>

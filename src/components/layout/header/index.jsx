@@ -8,6 +8,7 @@ import { useState } from 'react'
 import Menu from 'components/home-page/menu'
 import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Modal from 'components/menu/modal'
 
 const index = () => {
 
@@ -63,7 +64,13 @@ const index = () => {
           </div>
         </nav>
       </div>
-      <Menu modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
+      {/* <Menu modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} /> */}
+      {modalIsOpen && <Modal
+        setModalIsOpen={setModalIsOpen}
+        modalIsOpen={modalIsOpen}
+        lang={lang}
+        setLang={setLang}
+      />}
     </header>
   )
 }
