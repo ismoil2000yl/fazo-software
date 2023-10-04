@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Backdrop from 'components/menu/backdrop'
 import { useNavigate } from 'react-router-dom'
 import IconLogo from 'assets/images/png/Fazo 13.png'
@@ -6,7 +6,6 @@ import IconPhone from 'assets/images/png/phone.png'
 import IconUz from 'assets/images/png/uz.png'
 import IconRu from 'assets/images/png/ru.png'
 import IconEng from 'assets/images/png/en.png'
-import { useEffect } from 'react'
 
 const index = ({ setModalIsOpen, modalIsOpen, lang, setLang }) => {
 

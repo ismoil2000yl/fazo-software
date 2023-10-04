@@ -86,56 +86,57 @@
                 gap: 1.5rem;
             }
 
-            &-menu {
-                width: 20%;
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
+            // &-menu {
+            //     width: 20%;
+            //     display: flex;
+            //     flex-direction: column;
+            //     gap: 2rem;
 
-                @include lg {
-                    width: 50%;
-                    margin: 0 auto;
-                    padding-top: 10%;
-                }
+            //     @include lg {
+            //         width: 50%;
+            //         margin: 0 auto;
+            //         padding-top: 10%;
+            //     }
 
-                @include md {
-                    width: 40%;
-                    margin: 0 auto;
-                    padding-top: 3%;
-                }
+            //     @include md {
+            //         width: 40%;
+            //         margin: 0 auto;
+            //         padding-top: 3%;
+            //     }
 
-                @include sm {
-                    width: 60%;
-                }
+            //     @include sm {
+            //         width: 60%;
+            //     }
 
-                &-item {
-                    padding: 1rem;
-                    cursor: pointer;
-                    transition: all .3s ease-in-out;
-                    text-align: center;
-                    border-radius: 10px;
-                    background-color: #091731;
-                    z-index: 1111;
+            //     &-item {
+            //         padding: 1rem;
+            //         cursor: pointer;
+            //         transition: all .3s ease-in-out;
+            //         text-align: center;
+            //         border-radius: 10px;
+            //         background-color: #091731;
+            //         z-index: 1111;
 
-                    &:hover {
-                        box-shadow: 15px 15px 15px #05080E;
-                        // border-radius: 8px 25px;
-                        background-color: #091731;
+            //         &:hover {
+            //             box-shadow: 15px 15px 15px #05080E;
+            //             // border-radius: 8px 25px;
+            //             background-color: #091731;
 
-                        .modal-body-box-menu-item-link {
-                            opacity: 1;
-                        }
-                    }
+            //             .modal-body-box-menu-item-link {
+            //                 opacity: 1;
+            //             }
+            //         }
 
-                    &-link {
-                        color: white;
-                        font-size: 20px;
-                        opacity: .8;
-                        transition: all .3s ease-in-out;
-                    }
-                }
+            //         &-link {
+            //             color: white;
+            //             font-size: 20px;
+            //             opacity: .8;
+            //             transition: all .3s ease-in-out;
+            //         }
+            //     }
 
-            }
+
+            // }
         }
 
     }

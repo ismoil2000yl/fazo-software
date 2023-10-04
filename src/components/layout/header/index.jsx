@@ -14,6 +14,15 @@ const index = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const navigate = useNavigate()
 
+  const clickMenu = () => {
+    document.querySelector('.navigation').classList.toggle('activeMenu')
+    document.querySelector('.toggle').classList.toggle('active')
+  }
+
+  const removeMenu = () => {
+    document.querySelector('.navigation').classList.remove('activeMenu')
+    document.querySelector('.toggle').classList.remove('active')
+  }
 
   return (
     <header className="header">
@@ -53,22 +62,42 @@ const index = () => {
             </div>
             <div className="navbar__info__menu">
               <h3 className='navbar__info__menu__title'>Menu:</h3>
-              <button className={'navbar__info__menu__btn'} onClick={() => setModalIsOpen(prev => !prev)}>
-                <span className={`${modalIsOpen ? 'navbar__info__menu__btn__itemClick' : 'navbar__info__menu__btn__item'}`}></span>
-                <span className={`${modalIsOpen ? 'navbar__info__menu__btn__itemClick' : 'navbar__info__menu__btn__item'}`}></span>
-                <span className={`${modalIsOpen ? 'navbar__info__menu__btn__itemClick' : 'navbar__info__menu__btn__item'}`}></span>
+              <button className={'toggle'} onClick={clickMenu}>
+                <span></span>
+                <span></span>
+                <span></span>
               </button>
             </div>
           </div>
         </nav>
+        <div className="navigation">
+          <nav className="menu-nav">
+            <ul className="menu-nav-ul">
+              <li className="menu-nav-ul-li" onClick={() => { navigate('/portfolio'), removeMenu() }}>
+                <a className="menu-nav-ul-li-a">Portfolio</a>
+              </li>
+              <li className="menu-nav-ul-li" onClick={() => { navigate('/about'), removeMenu() }}>
+                <a className="menu-nav-ul-li-a">Biz xaqimizda</a>
+              </li>
+              <li className="menu-nav-ul-li" onClick={() => { navigate('/contact'), removeMenu() }}>
+                <a className="menu-nav-ul-li-a">Bog'lanish</a>
+              </li>
+              <li className="menu-nav-ul-li" onClick={() => { navigate('/services'), removeMenu() }}>
+                <a className="menu-nav-ul-li-a">Xizmatlarimiz</a>
+              </li>
+              <li className="menu-nav-ul-li" onClick={() => { navigate('/job'), removeMenu() }}>
+                <a className="menu-nav-ul-li-a">Ish izlayapsizmi?</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
-      {/* <Menu modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} /> */}
-      {modalIsOpen && <Modal
+      {/* {modalIsOpen && <Modal
         setModalIsOpen={setModalIsOpen}
         modalIsOpen={modalIsOpen}
         lang={lang}
         setLang={setLang}
-      />}
+      />} */}
     </header>
   )
 }
