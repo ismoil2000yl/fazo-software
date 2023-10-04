@@ -2,6 +2,7 @@
     width: 100%;
     padding-top: 5%;
     min-height: 100vh;
+    // padding-bottom: 3rem;
 
     @include md {
         padding-top: 100px;
@@ -47,6 +48,7 @@
         // background: linear-gradient(45deg, #EEEEEE 50%, #cedace 50%);
         background-color: #EEEEEE;
         padding: 2rem 0;
+        padding-bottom: 6rem;
 
         @include md {
             padding: 1rem;

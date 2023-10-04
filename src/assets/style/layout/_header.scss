@@ -99,6 +99,10 @@
                 gap: 10px;
                 cursor: pointer;
 
+                @include lg {
+                    display: none;
+                }
+
                 @include md {
                     display: none;
                 }

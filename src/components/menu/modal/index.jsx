@@ -65,11 +65,6 @@ const index = ({ setModalIsOpen, modalIsOpen, lang, setLang }) => {
                 </div>
                 <div className="navbar__info__menu">
                   <h3 className='navbar__info__menu__title'>Menu:</h3>
-                  {/* <button className={'navbar__info__menu__btn'} onClick={() => setModalIsOpen(prev => !prev)}>
-                    <span className={`${modalIsOpen ? 'navbar__info__menu__btn__itemClick' : 'navbar__info__menu__btn__item'}`}></span>
-                    <span className={`${modalIsOpen ? 'navbar__info__menu__btn__itemClick' : 'navbar__info__menu__btn__item'}`}></span>
-                    <span className={`${modalIsOpen ? 'navbar__info__menu__btn__itemClick' : 'navbar__info__menu__btn__item'}`}></span>
-                  </button> */}
                   <button className='closeBtn' onClick={() => setModalIsOpen(prev => !prev)}>
                     <span>&times;</span>
                   </button>
@@ -81,29 +76,7 @@ const index = ({ setModalIsOpen, modalIsOpen, lang, setLang }) => {
         <div className="modal-body">
           <div className="container">
             <div className="modal-body-box">
-              {/* <div className="modal-body-box-lang">
-                <h3>Tilni tanlang:</h3>
-                <div className="dropdown">
-                  <button className="dropbtn">
-                    <img src={lang.img} className="dropbtn__icon" alt="" />
-                  </button>
-                  <div className="dropdown-content">
-                    <a href="#" onClick={() => setLang({ img: IconUz, title: "Uz" })}>
-                      <img src={IconUz} alt="" />
-                      <span>Uz</span>
-                    </a>
-                    <a href="#" onClick={() => setLang({ img: IconRu, title: "Ru" })}>
-                      <img src={IconRu} alt="" />
-                      <span>Ru</span>
-                    </a>
-                    <a href="#" onClick={() => setLang({ img: IconEng, title: "Eng" })}>
-                      <img src={IconEng} alt="" />
-                      <span>Eng</span>
-                    </a>
-                  </div>
-                </div>
-              </div> */}
-              <ul className="modal-body-box-menu">
+              <ul className="modal-body-box-menu"  data-aos="fade-right">
                 <li className="modal-body-box-menu-item" onClick={() => { navigate('/portfolio'), setModalIsOpen(false) }}>
                   <a className="modal-body-box-menu-item-link">Portfolio</a>
                 </li>

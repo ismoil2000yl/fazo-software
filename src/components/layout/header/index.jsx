@@ -5,8 +5,6 @@ import IconUz from 'assets/images/png/uz.png'
 import IconRu from 'assets/images/png/ru.png'
 import IconEng from 'assets/images/png/en.png'
 import { useState } from 'react'
-import Menu from 'components/home-page/menu'
-import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Modal from 'components/menu/modal'
 

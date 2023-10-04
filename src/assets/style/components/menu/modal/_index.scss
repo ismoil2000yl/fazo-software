@@ -14,7 +14,27 @@
         width: 100%;
         height: 70px;
         background: linear-gradient(to bottom, #04060A 0%, #091832 100%);
-        padding: .5rem 0;
+        padding: 1.5rem 0;
+
+        @include lg {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        @include md {
+            height: 90px;
+            display: flex;
+            align-items: center;
+            margin-top: .5rem;
+        }
+
+        @include sm {
+            height: 90px;
+            padding: 1rem 0;
+            margin-top: 0;
+        }
 
         &-box {
             display: flex;
@@ -39,6 +59,16 @@
             flex-direction: column;
             gap: 1.5rem;
 
+            @include lg {
+                height: 90vh;
+                background-position: bottom;
+            }
+
+            @include md {
+                height: 90vh;
+                background-position: bottom;
+            }
+
             @include sm {
                 display: flex;
                 justify-content: center;
@@ -59,6 +89,18 @@
                 display: flex;
                 flex-direction: column;
                 gap: 2rem;
+
+                @include lg {
+                    width: 50%;
+                    margin: 0 auto;
+                    padding-top: 10%;
+                }
+
+                @include md {
+                    width: 40%;
+                    margin: 0 auto;
+                    padding-top: 3%;
+                }
 
                 @include sm {
                     width: 60%;

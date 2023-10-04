@@ -3,6 +3,7 @@
     padding-top: 5%;
     min-height: 100vh;
     background: linear-gradient(45deg, #EEEEEE 50%, #cedace 50%);
+    padding-bottom: 3rem;
 
     @include lg {
         min-height: 0;
@@ -106,44 +107,6 @@
             }
         }
 
-
-    }
-
-    &__info {
-        padding-top: 1.5rem;
-
-        hr {
-            opacity: .7;
-            height: .5px;
-            padding: 1rem 0;
-        }
-
-        &__box {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            width: 50%;
-            margin: 0 auto;
-            padding: 2rem 0;
-
-            @include sm {
-                width: 100%;
-            }
-
-            h5 {
-                font-size: 16px;
-                opacity: .9;
-                font-weight: 400;
-            }
-
-            p {
-                font-size: 16px;
-                opacity: .9;
-                line-height: 1.5rem;
-            }
-        }
 
     }
 }

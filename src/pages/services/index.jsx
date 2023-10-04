@@ -235,17 +235,6 @@ const index = () => {
                     </div>
                 </div>
             </div>
-            <div className="about__info">
-                <hr />
-                <div className="about__info__box">
-                    <h5>© 2023  “FAZO-SOFTWARE | info@fazo.uz</h5>
-                    <p>
-                        Barcha ishlar mualliflik huquqi bilan himoyalangan.
-                        Materiallardan nusxa ko'chirish va foydalanish faqat
-                        kompaniya ruxsati orqali amalga oshirilishi mumkin
-                    </p>
-                </div>
-            </div>
         </div>
     )
 }
