@@ -15,6 +15,8 @@
         height: 70px;
         background: linear-gradient(to bottom, #04060A 0%, #091832 100%);
         padding: 1.5rem 0;
+        display: flex;
+        align-items: center;
 
         @include lg {
             height: 120px;
@@ -71,9 +73,9 @@
 
             @include sm {
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
+                // justify-content: center;
+                // align-items: center;
+                // text-align: center;
                 padding-top: 3rem;
                 background-image: none;
             }

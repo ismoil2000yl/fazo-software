@@ -73,15 +73,20 @@
         top: -12%;
         background-color: #081730;
         border-radius: 50% 50% 0 0;
-        left: 47%;
+        left: 50%;
+        transform: translateX(-50%);
 
-        @include md{
-            left: 45%;
-        }
+        // @include lg {
+        //     left: 50%;
+        // }
 
-        @include sm {
-            left: 39%;
-        }
+        // @include md {
+        //     left: 45%;
+        // }
+
+        // @include sm {
+        //     left: 39%;
+        // }
 
         img {
             width: 100%;
@@ -134,7 +139,7 @@
                 gap: 1rem;
             }
 
-            @include sm{
+            @include sm {
                 display: none;
             }
 

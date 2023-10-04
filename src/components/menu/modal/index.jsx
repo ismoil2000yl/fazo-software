@@ -65,8 +65,10 @@ const index = ({ setModalIsOpen, modalIsOpen, lang, setLang }) => {
                 </div>
                 <div className="navbar__info__menu">
                   <h3 className='navbar__info__menu__title'>Menu:</h3>
-                  <button className='closeBtn' onClick={() => setModalIsOpen(prev => !prev)}>
-                    <span>&times;</span>
+                  <button className={'navbar__info__menu__btn'} onClick={() => setModalIsOpen(prev => !prev)}>
+                    <span className={`${modalIsOpen ? 'navbar__info__menu__btn__itemClick' : 'navbar__info__menu__btn__item'}`}></span>
+                    <span className={`${modalIsOpen ? 'navbar__info__menu__btn__itemClick' : 'navbar__info__menu__btn__item'}`}></span>
+                    <span className={`${modalIsOpen ? 'navbar__info__menu__btn__itemClick' : 'navbar__info__menu__btn__item'}`}></span>
                   </button>
                 </div>
               </div>
@@ -76,7 +78,7 @@ const index = ({ setModalIsOpen, modalIsOpen, lang, setLang }) => {
         <div className="modal-body">
           <div className="container">
             <div className="modal-body-box">
-              <ul className="modal-body-box-menu"  data-aos="fade-right">
+              <ul className="modal-body-box-menu" data-aos="fade-right">
                 <li className="modal-body-box-menu-item" onClick={() => { navigate('/portfolio'), setModalIsOpen(false) }}>
                   <a className="modal-body-box-menu-item-link">Portfolio</a>
                 </li>
