@@ -105,6 +105,10 @@
             gap: 2rem;
             padding: 1rem 0;
 
+            @include sm {
+                gap: 1rem;
+            }
+
             &-item {
                 width: 35px;
                 height: 35px;
