@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 
 const index = () => {
 
@@ -42,8 +43,10 @@ const index = () => {
             setPhoneNumber("");
             setEmail("");
             setMessage("");
+            toast.success("Xabar yuborildi")
         } catch (error) {
             console.error(error);
+            toast.error("Xabar yuborilmadi...!")
         }
     };
 
@@ -134,6 +137,7 @@ const index = () => {
                                         className='form-group-input'
                                         placeholder='First Name'
                                         value={firstName}
+                                        required={true}
                                         onChange={(e) => setFirstName(e.target.value)}
                                     />
                                 </div>
@@ -143,6 +147,7 @@ const index = () => {
                                         className='form-group-input'
                                         placeholder='Last Name'
                                         value={lastName}
+                                        required={true}
                                         onChange={(e) => setLastName(e.target.value)}
                                     />
                                 </div>
@@ -157,10 +162,11 @@ const index = () => {
                                 </div>
                                 <div className="form-group">
                                     <input
-                                        type="text"
+                                        type="number"
                                         className='form-group-input'
                                         placeholder='Phone Number'
                                         value={phoneNumber}
+                                        required={true}
                                         onChange={(e) => setPhoneNumber(e.target.value)}
                                     />
                                 </div>
@@ -170,6 +176,7 @@ const index = () => {
                                         className='form-group-input'
                                         placeholder='Write your message'
                                         value={message}
+                                        required={true}
                                         onChange={(e) => setMessage(e.target.value)}
                                     />
                                 </div>

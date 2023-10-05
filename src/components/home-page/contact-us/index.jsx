@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 import IconPhone from 'assets/images/jpg/Artboard 2-100.jpg'
 import IconLocation from 'assets/images/jpg/Artboard 5-100.jpg'
 import IconWebSite from 'assets/images/jpg/Artboard 7-100.jpg'
@@ -12,8 +13,6 @@ const index = () => {
     const [email, setEmail] = useState("")
     const [phoneNumber, setPhoneNumber] = useState("")
     const [message, setMessage] = useState("")
-
-    const [disabledBtn, setDisabledBtn] = useState(false)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -37,16 +36,16 @@ const index = () => {
                 }
             );
 
-            // console.log(response.data);
-
             // Reset form fields
             setFirstName("");
             setLastName("");
             setPhoneNumber("");
             setEmail("");
             setMessage("");
+            toast.success("Xabar yuborildi")
         } catch (error) {
             console.error(error);
+            toast.error("Xabar yuborilmadi...!")
         }
     };
 
@@ -85,6 +84,7 @@ const index = () => {
                                         className='form-group-input'
                                         placeholder='First Name'
                                         value={firstName}
+                                        required={true}
                                         onChange={(e) => setFirstName(e.target.value)}
                                     />
                                 </div>
@@ -94,6 +94,7 @@ const index = () => {
                                         className='form-group-input'
                                         placeholder='Last Name'
                                         value={lastName}
+                                        required={true}
                                         onChange={(e) => setLastName(e.target.value)}
                                     />
                                 </div>
@@ -103,16 +104,18 @@ const index = () => {
                                         className='form-group-input'
                                         placeholder='Email'
                                         value={email}
+                                        required={false}
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
                                 </div>
                                 <div className="form-group">
                                     <input
-                                        type="text"
+                                        type="number"
                                         defaultValue={"+998"}
                                         className='form-group-input'
                                         placeholder='Phone Number'
                                         value={phoneNumber}
+                                        required={true}
                                         onChange={(e) => setPhoneNumber(e.target.value)}
                                     />
                                 </div>
@@ -122,6 +125,7 @@ const index = () => {
                                         className='form-group-input'
                                         placeholder='Write your message'
                                         value={message}
+                                        required={true}
                                         onChange={(e) => setMessage(e.target.value)}
                                     />
                                 </div>

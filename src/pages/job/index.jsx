@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 
 const index = () => {
 
@@ -30,14 +31,14 @@ const index = () => {
                 }
             );
 
-            // console.log(response.data);
-
             // Reset form fields
             setName("")
             setPhone("")
             setMessage("");
+            toast.success("Xabar yuborildi")
         } catch (error) {
             console.error(error);
+            toast.error("Xabar yuborilmadi...!")
         }
     };
 
@@ -117,14 +118,16 @@ const index = () => {
                                 type="text"
                                 placeholder='Ismingiz...'
                                 value={name}
+                                required={true}
                                 onChange={(e) => setName(e.target.value)}
                             />
                         </div>
                         <div className="job__body__form__input">
                             <input
-                                type="text"
+                                type="number"
                                 placeholder='Telefon...'
                                 value={phone}
+                                required={true}
                                 onChange={(e) => setPhone(e.target.value)}
                             />
                         </div>
@@ -133,6 +136,7 @@ const index = () => {
                                 type="text"
                                 placeholder="O'zingiz xaqingizda yozing..."
                                 value={message}
+                                required={true}
                                 onChange={(e) => setMessage(e.target.value)}
                             />
                         </div>
