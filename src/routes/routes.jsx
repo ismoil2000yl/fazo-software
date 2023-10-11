@@ -3,6 +3,7 @@ import { Layout } from "components";
 import { Route, Routes } from "react-router-dom";
 import { authRoutes, privateRoutes } from "./index";
 import { get } from "lodash";
+import NotFound from 'pages/not found'
 
 const appRoutes = (routes) => {
   return routes.map((route, key) => (
@@ -19,8 +20,8 @@ const appRoutes = (routes) => {
 const routesWrapper = () => {
   return (
     <Routes>
-      <Route path="*" element={<div>Not Found</div>} />
       <Route path="/" element={<Layout />}>
+        <Route path="*" element={<NotFound />} />
         {appRoutes(privateRoutes)}
       </Route>
     </Routes>

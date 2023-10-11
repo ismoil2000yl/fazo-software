@@ -1,0 +1,45 @@
+.found {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #04060A 0%, #091832 100%);
+    color: white;
+    position: relative;
+
+    &-box {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 5%;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        &-title {
+            font-size: 100px;
+        }
+        
+        &-description {
+            font-size: 40px;
+        }
+        
+        &-btn {
+            border: 1px solid white;
+            color: white;
+            padding: 1rem 1.5rem;
+            margin-top: 2rem;
+            transition: all .3s ease-in-out;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 5px;
+
+            &:hover {
+                color: #04060A;
+                background-color: white;
+            }
+        }
+    }
+}
