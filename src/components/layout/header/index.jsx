@@ -31,17 +31,7 @@ const index = () => {
         <nav className='navbar'>
           <div className="navbar__logo" onClick={() => navigate('/')}>
             <div className="navbar__logo__item">
-              {
-                IconLogo ?
-                  <LazyLoadImage
-                    src={IconLogo}
-                    alt=""
-                    effect="blur"
-                    className="navbar__logo__img"
-                    placeholderSrc={IconLogo}
-                  />
-                  : <h1 id="f">F</h1>
-              }
+              <img src={IconLogo} className="navbar__logo__img" alt="" />
             </div>
             <h1 className='navbar__logo__items'>azo Software</h1>
           </div>
