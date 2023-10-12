@@ -7,6 +7,7 @@ import IconEng from 'assets/images/png/en.png'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Modal from 'components/menu/modal'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const index = () => {
 
@@ -30,7 +31,12 @@ const index = () => {
         <nav className='navbar'>
           <div className="navbar__logo" onClick={() => navigate('/')}>
             <div className="navbar__logo__item">
-              <img src={IconLogo} alt="" className="navbar__logo__img" />
+              <LazyLoadImage
+                src={IconLogo}
+                alt=""
+                className="navbar__logo__img"
+                placeholderSrc={IconLogo}
+              />
             </div>
             <h1 className='navbar__logo__items'>azo Software</h1>
           </div>
