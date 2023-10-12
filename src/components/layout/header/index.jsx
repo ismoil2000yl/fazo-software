@@ -31,12 +31,17 @@ const index = () => {
         <nav className='navbar'>
           <div className="navbar__logo" onClick={() => navigate('/')}>
             <div className="navbar__logo__item">
-              <LazyLoadImage
-                src={IconLogo}
-                alt=""
-                className="navbar__logo__img"
-                placeholderSrc={IconLogo}
-              />
+              {
+                IconLogo ?
+                  <LazyLoadImage
+                    src={IconLogo}
+                    alt=""
+                    effect="blur"
+                    className="navbar__logo__img"
+                    placeholderSrc={IconLogo}
+                  />
+                  : <h1 id="f">F</h1>
+              }
             </div>
             <h1 className='navbar__logo__items'>azo Software</h1>
           </div>
