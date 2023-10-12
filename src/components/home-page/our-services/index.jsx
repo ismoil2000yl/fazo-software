@@ -8,6 +8,7 @@ import IconAndroid from 'assets/images/png/android.png'
 import IconIphone from 'assets/images/png/iphone.png'
 import IconRobot from 'assets/images/png/robot.png'
 import { useNavigate } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const index = () => {
 
@@ -21,7 +22,7 @@ const index = () => {
                         <h1>Bizning Xizmatlarimiz</h1>
                     </div>
                     <div className="services__box">
-                        <div className="services__box__card" data-aos="flip-left" onClick={()=>navigate('/service-info/frontend')}>
+                        <div className="services__box__card" data-aos="flip-left" onClick={() => navigate('/service-info/frontend')}>
                             <div className="services__box__card__inbox">
                                 <h4 className="services__box__card__inbox__title">
                                     Frontend
@@ -38,13 +39,18 @@ const index = () => {
                                 <div className="services__box__card__cover__front">
                                     <div className='services__box__card__cover__front__box'>
                                         <h4 className='services__box__card__cover__front__box__title'>Frontend</h4>
-                                        <img src={IconFront} alt="" />
+                                        <LazyLoadImage
+                                            src={IconFront}
+                                            alt=""
+                                            effect="blur"
+                                            placeholderSrc={IconFront}
+                                        />
                                     </div>
                                 </div>
                                 <div className="services__box__card__cover__back"></div>
                             </div>
                         </div>
-                        <div className="services__box__card" data-aos="flip-left"  onClick={()=>navigate('/service-info/backend')}>
+                        <div className="services__box__card" data-aos="flip-left" onClick={() => navigate('/service-info/backend')}>
                             <div className="services__box__card__inbox">
                                 <h4 className="services__box__card__inbox__title">
                                     Backend
@@ -72,13 +78,18 @@ const index = () => {
                                 <div className="services__box__card__cover__front">
                                     <div className='services__box__card__cover__front__box'>
                                         <h4 className='services__box__card__cover__front__box__title'>Backend</h4>
-                                        <img src={IconBackend} alt="" />
+                                        <LazyLoadImage
+                                            src={IconBackend}
+                                            alt=""
+                                            effect="blur"
+                                            placeholderSrc={IconBackend}
+                                        />
                                     </div>
                                 </div>
                                 <div className="services__box__card__cover__back"></div>
                             </div>
                         </div>
-                        <div className="services__box__card" data-aos="flip-left"  onClick={()=>navigate('/service-info/web-design')}>
+                        <div className="services__box__card" data-aos="flip-left" onClick={() => navigate('/service-info/web-design')}>
                             <div className="services__box__card__inbox">
                                 <h4 className="services__box__card__inbox__title">
                                     Web Design
@@ -95,13 +106,18 @@ const index = () => {
                                 <div className="services__box__card__cover__front">
                                     <div className='services__box__card__cover__front__box'>
                                         <h4 className='services__box__card__cover__front__box__title'>Web Design</h4>
-                                        <img src={IconWebDesign} alt="" />
+                                        <LazyLoadImage
+                                            src={IconWebDesign}
+                                            alt=""
+                                            effect="blur"
+                                            placeholderSrc={IconWebDesign}
+                                        />
                                     </div>
                                 </div>
                                 <div className="services__box__card__cover__back"></div>
                             </div>
                         </div>
-                        <div className="services__box__card" data-aos="flip-left"  onClick={()=>navigate('/service-info/mobile-design')}>
+                        <div className="services__box__card" data-aos="flip-left" onClick={() => navigate('/service-info/mobile-design')}>
                             <div className="services__box__card__inbox">
                                 <h4 className="services__box__card__inbox__title">
                                     Mobile Design
@@ -118,13 +134,18 @@ const index = () => {
                                 <div className="services__box__card__cover__front">
                                     <div className='services__box__card__cover__front__box'>
                                         <h4 className='services__box__card__cover__front__box__title'>Mobile Design</h4>
-                                        <img src={IconMobileDesign} alt="" />
+                                        <LazyLoadImage
+                                            src={IconMobileDesign}
+                                            alt=""
+                                            effect="blur"
+                                            placeholderSrc={IconMobileDesign}
+                                        />
                                     </div>
                                 </div>
                                 <div className="services__box__card__cover__back"></div>
                             </div>
                         </div>
-                        <div className="services__box__card" data-aos="flip-left"  onClick={()=>navigate('/service-info/graphic-design')}>
+                        <div className="services__box__card" data-aos="flip-left" onClick={() => navigate('/service-info/graphic-design')}>
                             <div className="services__box__card__inbox">
                                 <h4 className="services__box__card__inbox__title">
                                     Graphic Design
@@ -141,13 +162,18 @@ const index = () => {
                                 <div className="services__box__card__cover__front">
                                     <div className='services__box__card__cover__front__box'>
                                         <h4 className='services__box__card__cover__front__box__title'>Graphic Design</h4>
-                                        <img src={IconGraphicDesign} alt="" />
+                                        <LazyLoadImage
+                                            src={IconGraphicDesign}
+                                            alt=""
+                                            effect="blur"
+                                            placeholderSrc={IconGraphicDesign}
+                                        />
                                     </div>
                                 </div>
                                 <div className="services__box__card__cover__back"></div>
                             </div>
                         </div>
-                        <div className="services__box__card" data-aos="flip-left"  onClick={()=>navigate('/service-info/android')}>
+                        <div className="services__box__card" data-aos="flip-left" onClick={() => navigate('/service-info/android')}>
                             <div className="services__box__card__inbox">
                                 <h4 className="services__box__card__inbox__title">
                                     Android
@@ -164,13 +190,18 @@ const index = () => {
                                 <div className="services__box__card__cover__front">
                                     <div className='services__box__card__cover__front__box'>
                                         <h4 className='services__box__card__cover__front__box__title'>Android</h4>
-                                        <img src={IconAndroid} alt="" />
+                                        <LazyLoadImage
+                                            src={IconAndroid}
+                                            alt=""
+                                            effect="blur"
+                                            placeholderSrc={IconAndroid}
+                                        />
                                     </div>
                                 </div>
                                 <div className="services__box__card__cover__back"></div>
                             </div>
                         </div>
-                        <div className="services__box__card" data-aos="flip-left"  onClick={()=>navigate('/service-info/ios')}>
+                        <div className="services__box__card" data-aos="flip-left" onClick={() => navigate('/service-info/ios')}>
                             <div className="services__box__card__inbox">
                                 <h4 className="services__box__card__inbox__title">
                                     IOS
@@ -187,13 +218,18 @@ const index = () => {
                                 <div className="services__box__card__cover__front">
                                     <div className='services__box__card__cover__front__box'>
                                         <h4 className='services__box__card__cover__front__box__title'>IOS</h4>
-                                        <img src={IconIphone} alt="" />
+                                        <LazyLoadImage
+                                            src={IconIphone}
+                                            alt=""
+                                            effect="blur"
+                                            placeholderSrc={IconIphone}
+                                        />
                                     </div>
                                 </div>
                                 <div className="services__box__card__cover__back"></div>
                             </div>
                         </div>
-                        <div className="services__box__card" data-aos="flip-left"  onClick={()=>navigate('/service-info/robot-technology')}>
+                        <div className="services__box__card" data-aos="flip-left" onClick={() => navigate('/service-info/robot-technology')}>
                             <div className="services__box__card__inbox">
                                 <h4 className="services__box__card__inbox__title">
                                     Robot Technology
@@ -210,7 +246,12 @@ const index = () => {
                                 <div className="services__box__card__cover__front">
                                     <div className='services__box__card__cover__front__box'>
                                         <h4 className='services__box__card__cover__front__box__title'>Robot Technology</h4>
-                                        <img src={IconRobot} alt="" />
+                                        <LazyLoadImage
+                                            src={IconRobot}
+                                            alt=""
+                                            effect="blur"
+                                            placeholderSrc={IconRobot}
+                                        />
                                     </div>
                                 </div>
                                 <div className="services__box__card__cover__back"></div>

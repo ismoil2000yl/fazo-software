@@ -1,5 +1,6 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import IconClient1 from 'assets/images/jpg/client-1.jpg'
@@ -53,82 +54,178 @@ const index = () => {
                     >
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient1} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient1}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient1}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient2} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient2}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient2}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient3} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient3}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient3}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient4} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient4}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient4}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient5} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient5}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient5}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient6} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient6}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient6}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient7} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient7}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient7}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient8} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient8}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient8}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient1} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient1}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient1}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient2} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient2}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient2}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient3} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient3}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient3}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient4} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient4}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient4}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient5} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient5}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient5}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient6} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient6}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient6}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient7} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient7}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient7}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient8} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient8}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient8}
+                                />
                             </div>
                         </SwiperSlide>
                     </Swiper>
@@ -165,82 +262,178 @@ const index = () => {
                     >
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient1} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient1}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient1}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient2} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient2}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient2}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient3} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient3}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient3}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient4} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient4}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient4}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient5} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient5}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient5}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient6} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient6}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient6}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient7} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient7}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient7}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient8} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient8}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient8}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient1} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient1}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient1}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient2} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient2}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient2}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient3} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient3}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient3}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient4} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient4}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient4}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient5} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient5}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient5}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient6} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient6}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient6}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient7} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient7}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient7}
+                                />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="clients__box__item">
-                                <img src={IconClient8} alt="" className="clients__box__item__img" />
+                                <LazyLoadImage
+                                    src={IconClient8}
+                                    alt=""
+                                    className="clients__box__item__img"
+                                    effect="blur"
+                                    placeholderSrc={IconClient8}
+                                />
                             </div>
                         </SwiperSlide>
                     </Swiper>

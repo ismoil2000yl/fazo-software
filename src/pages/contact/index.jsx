@@ -11,8 +11,6 @@ const index = () => {
     const [phoneNumber, setPhoneNumber] = useState("")
     const [message, setMessage] = useState("")
 
-    const [disabledBtn, setDisabledBtn] = useState(false)
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 

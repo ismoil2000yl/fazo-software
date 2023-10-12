@@ -1,5 +1,6 @@
 import React from 'react'
 import ImgPhone from 'assets/images/png/about-phone.png'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const index = () => {
     return (
@@ -27,7 +28,12 @@ const index = () => {
                 <div className="about__body__box">
                     <div className="about__body__box__img">
                         <div className="about__body__box__img__item">
-                            <img src={ImgPhone} alt="" />
+                            <LazyLoadImage
+                                src={ImgPhone}
+                                alt=""
+                                effect="blur"
+                                placeholderSrc={ImgPhone}
+                            />
                         </div>
                     </div>
                     <div className="about__body__box__info">

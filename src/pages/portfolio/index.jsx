@@ -6,6 +6,7 @@ import ImgProject4 from 'assets/images/jpg/my-project-4.jpg'
 import ImgProject5 from 'assets/images/jpg/my-project-5.jpg'
 import ImgProject6 from 'assets/images/jpg/my-project-6.jpg'
 import { useNavigate } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const index = () => {
 
@@ -73,7 +74,12 @@ const index = () => {
                         <div className="projects__box">
                             <div className="projects__box__card" data-aos="flip-right" >
                                 <div className="projects__box__card__img">
-                                    <img src={ImgProject1} alt="" />
+                                    <LazyLoadImage
+                                        src={ImgProject1}
+                                        alt=""
+                                        effect="blur"
+                                        placeholderSrc={ImgProject1}
+                                    />
                                 </div>
                                 <div className="projects__box__card__content">
                                     <h3 className='projects__box__card__content__title'>Empire web site</h3>
@@ -84,7 +90,12 @@ const index = () => {
                             </div>
                             <div className="projects__box__card" data-aos="flip-right" >
                                 <div className="projects__box__card__img">
-                                    <img src={ImgProject2} alt="" />
+                                    <LazyLoadImage
+                                        src={ImgProject2}
+                                        alt=""
+                                        effect="blur"
+                                        placeholderSrc={ImgProject2}
+                                    />
                                 </div>
                                 <div className="projects__box__card__content">
                                     <h3 className='projects__box__card__content__title'>Aqlli robot</h3>
@@ -95,7 +106,12 @@ const index = () => {
                             </div>
                             <div className="projects__box__card" data-aos="flip-right" >
                                 <div className="projects__box__card__img">
-                                    <img src={ImgProject3} alt="" />
+                                    <LazyLoadImage
+                                        src={ImgProject3}
+                                        alt=""
+                                        effect="blur"
+                                        placeholderSrc={ImgProject3}
+                                    />
                                 </div>
                                 <div className="projects__box__card__content">
                                     <h3 className='projects__box__card__content__title'>Fazo saytining UX UI dizayni</h3>
@@ -106,7 +122,12 @@ const index = () => {
                             </div>
                             <div className="projects__box__card" data-aos="flip-right" >
                                 <div className="projects__box__card__img">
-                                    <img src={ImgProject4} alt="" />
+                                    <LazyLoadImage
+                                        src={ImgProject4}
+                                        alt=""
+                                        effect="blur"
+                                        placeholderSrc={ImgProject4}
+                                    />
                                 </div>
                                 <div className="projects__box__card__content">
                                     <h3 className='projects__box__card__content__title'>3D Model</h3>
@@ -117,7 +138,12 @@ const index = () => {
                             </div>
                             <div className="projects__box__card" data-aos="flip-right">
                                 <div className="projects__box__card__img">
-                                    <img src={ImgProject5} alt="" />
+                                    <LazyLoadImage
+                                        src={ImgProject5}
+                                        alt=""
+                                        effect="blur"
+                                        placeholderSrc={ImgProject5}
+                                    />
                                 </div>
                                 <div className="projects__box__card__content">
                                     <h3 className='projects__box__card__content__title'>Fazo APK Android dasturi</h3>
@@ -128,7 +154,12 @@ const index = () => {
                             </div>
                             <div className="projects__box__card" data-aos="flip-right">
                                 <div className="projects__box__card__img">
-                                    <img src={ImgProject6} alt="" />
+                                    <LazyLoadImage
+                                        src={ImgProject6}
+                                        alt=""
+                                        effect="blur"
+                                        placeholderSrc={ImgProject6}
+                                    />
                                 </div>
                                 <div className="projects__box__card__content">
                                     <h3 className='projects__box__card__content__title'>Suv ichuvchi robot</h3>
@@ -139,7 +170,12 @@ const index = () => {
                             </div>
                             <div className="projects__box__card" data-aos="flip-right" >
                                 <div className="projects__box__card__img">
-                                    <img src={ImgProject1} alt="" />
+                                    <LazyLoadImage
+                                        src={ImgProject1}
+                                        alt=""
+                                        effect="blur"
+                                        placeholderSrc={ImgProject1}
+                                    />
                                 </div>
                                 <div className="projects__box__card__content">
                                     <h3 className='projects__box__card__content__title'>Empire web site</h3>
@@ -150,7 +186,12 @@ const index = () => {
                             </div>
                             <div className="projects__box__card" data-aos="flip-right" >
                                 <div className="projects__box__card__img">
-                                    <img src={ImgProject2} alt="" />
+                                    <LazyLoadImage
+                                        src={ImgProject2}
+                                        alt=""
+                                        effect="blur"
+                                        placeholderSrc={ImgProject2}
+                                    />
                                 </div>
                                 <div className="projects__box__card__content">
                                     <h3 className='projects__box__card__content__title'>Aqlli robot</h3>
@@ -161,7 +202,12 @@ const index = () => {
                             </div>
                             <div className="projects__box__card" data-aos="flip-right" >
                                 <div className="projects__box__card__img">
-                                    <img src={ImgProject3} alt="" />
+                                    <LazyLoadImage
+                                        src={ImgProject3}
+                                        alt=""
+                                        effect="blur"
+                                        placeholderSrc={ImgProject3}
+                                    />
                                 </div>
                                 <div className="projects__box__card__content">
                                     <h3 className='projects__box__card__content__title'>Fazo saytining UX UI dizayni</h3>
@@ -172,7 +218,12 @@ const index = () => {
                             </div>
                             <div className="projects__box__card" data-aos="flip-right" >
                                 <div className="projects__box__card__img">
-                                    <img src={ImgProject4} alt="" />
+                                    <LazyLoadImage
+                                        src={ImgProject4}
+                                        alt=""
+                                        effect="blur"
+                                        placeholderSrc={ImgProject4}
+                                    />
                                 </div>
                                 <div className="projects__box__card__content">
                                     <h3 className='projects__box__card__content__title'>3D Model</h3>
@@ -183,7 +234,12 @@ const index = () => {
                             </div>
                             <div className="projects__box__card" data-aos="flip-right">
                                 <div className="projects__box__card__img">
-                                    <img src={ImgProject5} alt="" />
+                                    <LazyLoadImage
+                                        src={ImgProject5}
+                                        alt=""
+                                        effect="blur"
+                                        placeholderSrc={ImgProject5}
+                                    />
                                 </div>
                                 <div className="projects__box__card__content">
                                     <h3 className='projects__box__card__content__title'>Fazo APK Android dasturi</h3>
@@ -194,7 +250,12 @@ const index = () => {
                             </div>
                             <div className="projects__box__card" data-aos="flip-right">
                                 <div className="projects__box__card__img">
-                                    <img src={ImgProject6} alt="" />
+                                    <LazyLoadImage
+                                        src={ImgProject6}
+                                        alt=""
+                                        effect="blur"
+                                        placeholderSrc={ImgProject6}
+                                    />
                                 </div>
                                 <div className="projects__box__card__content">
                                     <h3 className='projects__box__card__content__title'>Suv ichuvchi robot</h3>
