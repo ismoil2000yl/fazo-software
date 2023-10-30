@@ -4,6 +4,10 @@
     min-height: 100vh;
     // padding-bottom: 3rem;
 
+    @include lg {
+        padding-top: 100px;
+    }
+
     @include md {
         padding-top: 100px;
     }

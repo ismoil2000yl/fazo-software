@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ImgPhone from 'assets/images/png/about-phone.png'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
+import axios from 'axios'
 
 const index = () => {
+
+    const [info, setInfo] = useState({})
+    const getInfo = async () => {
+        const data = await axios.get("http://192.168.1.195:5055/company-details")
+        setInfo(data?.data[0])
+    }
+
+    useEffect(() => {
+        getInfo()
+    }, [])
+
     return (
         <div className='about'>
             <div className="about__header">
@@ -39,10 +51,7 @@ const index = () => {
                     <div className="about__body__box__info">
                         <div className="container">
                             <p>
-                                "Fazo Software" Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit. Ad sequi corrupti voluptatum voluptate cupiditate voluptas
-                                consequatur itaque reiciendis! Repudiandae mollitia voluptatibus,
-                                id velit explicabo voluptas temporibus laboriosam aliquid sit alias.
+                                {info?.about}
                             </p>
                         </div>
                     </div>

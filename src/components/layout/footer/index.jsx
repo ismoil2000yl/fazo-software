@@ -1,12 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import IconFacebook from 'assets/images/png/facebook.png'
 import IconTelegram from 'assets/images/png/telegram.png'
 import IconInstagram from 'assets/images/png/instagram.png'
 import IconLinkedin from 'assets/images/png/linkedin.png'
 import IconGithub from 'assets/images/png/github.png'
 import IconLogo from 'assets/images/png/Fazo 13-2.png'
+import axios from "axios";
 
 const index = () => {
+
+
+  const [links, setLinks] = useState([])
+
+  const getData = async () => {
+    const data = await axios.get("http://192.168.1.195:5055/links/all")
+    setLinks(data?.data[0])
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
+
   return (
     <footer className="footer">
       <div className="footer-logo">
@@ -15,27 +29,27 @@ const index = () => {
       <div className="footer-body">
         <ul className="footer-body-social">
           <li className="footer-body-social-item">
-            <a href="">
+            <a href={links?.facebook}>
               <img src={IconFacebook} alt="" className="footer-body-social-item-img" />
             </a>
           </li>
           <li className="footer-body-social-item">
-            <a href="">
+            <a href={links?.instagram}>
               <img src={IconInstagram} alt="" className="footer-body-social-item-img" />
             </a>
           </li>
           <li className="footer-body-social-item">
-            <a href="">
+            <a href={links?.telegram}>
               <img src={IconTelegram} alt="" className="footer-body-social-item-img" />
             </a>
           </li>
           <li className="footer-body-social-item">
-            <a href="">
+            <a href={links?.linkedIn}>
               <img src={IconLinkedin} alt="" className="footer-body-social-item-img" />
             </a>
           </li>
           <li className="footer-body-social-item">
-            <a href="">
+            <a href={links?.github}>
               <img src={IconGithub} alt="" className="footer-body-social-item-img" />
             </a>
           </li>
@@ -69,28 +83,8 @@ const index = () => {
           </p>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 };
 
 export default index;
-
-
-{/* <ul className="social-network">
-        <li className="social-network-item">
-          <img src={IconTelegram} alt="" />
-          <h4 className="social-network-item-title">Telegram</h4>
-        </li>
-        <li className="social-network-item">
-          <img src={IconInstagram} alt="" />
-          <h4 className="social-network-item-title">Instagram</h4>
-        </li>
-        <li className="social-network-item">
-          <img src={IconFacebook} alt="" />
-          <h4 className="social-network-item-title">Facebook</h4>
-        </li>
-        <li className="social-network-item">
-          <img src={IconDiamond} alt="" />
-          <h4 className="social-network-item-title">Diamond</h4>
-        </li>
-      </ul> */}

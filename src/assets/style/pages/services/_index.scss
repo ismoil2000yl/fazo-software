@@ -5,16 +5,16 @@
     background-color: #EEEEEE;
     padding-bottom: 4rem;
 
+    @include lg {
+        padding-top: 100px;
+    }
+
     @include md {
         padding-top: 100px;
     }
 
     @include sm {
         padding-top: 100px;
-    }
-
-    .projects-circles {
-        height: 30vh !important;
     }
 
     &__header {
@@ -53,6 +53,6 @@
     }
 }
 
-.services__body{
+.services__body {
     padding-bottom: 3rem;
 }

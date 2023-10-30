@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 
@@ -10,6 +10,24 @@ const index = () => {
     const [message, setMessage] = useState("")
 
     const [disabledBtn, setDisabledBtn] = useState(false)
+
+    const [vakansiya, setVakansiya] = useState([])
+    const [info, setInfo] = useState({})
+
+    const getData = async () => {
+        const data = await axios.get("http://192.168.1.195:5055/vacancies/all")
+        setVakansiya(data?.data)
+    }
+
+    const getInfo = async () => {
+        const data = await axios.get("http://192.168.1.195:5055/company-details")
+        setInfo(data?.data[0])
+    }
+
+    useEffect(() => {
+        getData()
+        getInfo()
+    }, [])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -67,11 +85,13 @@ const index = () => {
                                     biz sizga quyidagi yo'nalishlarida ish o'rinlarini taklif qilamiz:
                                 </p>
                                 <p>
-                                    Front end (ReactJS) <br />
-                                    Back-end(PHP) <br />
-                                    UI/UX dizayneri <br />
-                                    Loyihalar bo'yicha menejer (PM) <br />
-                                    Mobil dasturchi (React Native) <br />
+                                    {
+                                        vakansiya[0] ? vakansiya.map(item => {
+                                            return <span key={item.id}>
+                                                {item.title} <br />
+                                            </ span>
+                                        }) : <span>Xozircha bo'sh ish o'rni yo'q</span>
+                                    }
                                 </p>
                                 <p>
                                     Biz bo'sh ish o'rinlari uchun murojaat qilgan har bir nomzoddan xursandmiz.
@@ -83,17 +103,15 @@ const index = () => {
                             <div className="job__header__box__right__info">
                                 <p>Manzil</p>
                                 <p>
-                                    O'zbekiston, Namangan Viloyati, Namangan Shahri,
-                                    Amir Temur koʻchasi, 101-uy. Sanoat(industralniy) kolleji birinchi qavati,
-                                    IT School binosi, 5-xona
+                                    {info?.address}
                                 </p>
                                 <div className="job__header__box__right__info__social">
                                     <h5>E-mail</h5>
-                                    <h5>info@fazo.uz</h5>
+                                    <h5>{info?.email}</h5>
                                 </div>
                                 <div className="job__header__box__right__info__social">
                                     <h5>Telegram</h5>
-                                    <h5>@fazosoftware</h5>
+                                    <h5>{info?.telegram}</h5>
                                 </div>
                             </div>
                             <div className="job__header__box__right__number">
@@ -101,9 +119,7 @@ const index = () => {
                                     Telefonlar
                                 </p>
                                 <div className="job__header__box__right__number__box">
-                                    <h3>(90) 123-45-67</h3>
-                                    <h3>(90) 123-45-67</h3>
-                                    <h3>(90) 123-45-67</h3>
+                                    <h3>{info?.phone}</h3>
                                 </div>
                             </div>
                         </div>

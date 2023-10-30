@@ -8,11 +8,11 @@ const api = axios.create({
 });
 
 api.defaults.params = {};
-api.defaults.params["_f"] = "json";
+// api.defaults.params["_f"] = "json";
 api.defaults.headers.common["Accept"] = "application/json";
 api.defaults.headers.common["Cache-Control"] = "no-cache";
 api.defaults.headers.common["Content-Type"] = "application/json; charset=utf-8";
-api.defaults.params['author_id'] = 16
+// api.defaults.params['author_id'] = 16
 
 api.interceptors.request.use(
   (configs) => {

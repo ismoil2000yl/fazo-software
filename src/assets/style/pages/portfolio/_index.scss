@@ -5,16 +5,16 @@
     background-color: #EEEEEE;
     padding-bottom: 3.5rem;
 
+    @include lg {
+        padding-top: 100px;
+    }
+
     @include md {
         padding-top: 100px;
     }
 
     @include sm {
         padding-top: 100px;
-    }
-
-    .projects-circles {
-        height: 30vh !important;
     }
 
     &__header {
@@ -78,11 +78,6 @@
                 box-shadow: 10px 15px 7px #E7E7E7;
                 font-weight: 550;
                 color: #414D7D;
-
-                &:focus {
-                    background-color: #304FFF;
-                    color: white;
-                }
             }
         }
 
@@ -91,4 +86,9 @@
         }
 
     }
+}
+
+.active {
+    background-color: #304FFF;
+    color: white;
 }

@@ -20,8 +20,9 @@
         background: #cedace;
     }
 
-    .about-circles {
-        height: 30vh !important;
+    &-circles {
+        // height: 90% !important;
+        min-height: 100vh;
     }
 
     &__header {

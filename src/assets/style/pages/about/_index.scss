@@ -7,6 +7,7 @@
 
     @include lg {
         min-height: 0;
+        padding-top: 100px;
     }
 
     @include md {
@@ -20,6 +21,18 @@
 
     .about-circles {
         height: 30vh !important;
+
+        @include lg {
+            min-height: 25vh;
+        }
+
+        @include md {
+            min-height: 25vh;
+        }
+
+        @include sm {
+            min-height: 25vh;
+        }
     }
 
     &__header {

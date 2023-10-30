@@ -22,6 +22,18 @@
 
     .about-circles {
         height: 30vh !important;
+
+        @include lg {
+            min-height: 25vh;
+        }
+
+        @include md {
+            min-height: 25vh;
+        }
+
+        @include sm {
+            min-height: 25vh;
+        }
     }
 
     &__header {

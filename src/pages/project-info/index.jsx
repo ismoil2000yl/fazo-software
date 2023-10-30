@@ -1,8 +1,23 @@
-import React from 'react'
-import ImgProject from 'assets/images/jpg/my-project-5.jpg'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 const index = () => {
+
+    const { id } = useParams()
+    const [item, setItem] = useState()
+
+    useEffect(() => {
+        getData()
+    }, [])
+
+    const getData = async () => {
+        const data = await axios.get(`http://192.168.1.195:5055/projects/${id}`)
+        setItem(data?.data)
+    }
+
+
     return (
         <div className='projects-info'>
             <div className="projects-info__header">
@@ -20,7 +35,7 @@ const index = () => {
                 </ul>
                 <div className="container">
                     <div className="projects-info__header__title">
-                        <h1>Fazo Software APK dasturi</h1>
+                        <h1>{item?.title}</h1>
                     </div>
                 </div>
             </div>
@@ -29,23 +44,20 @@ const index = () => {
                     <div className="projects-info__body__box">
                         <div className="projects-info__body__box__img">
                             <LazyLoadImage
-                                src={ImgProject}
+                                src={`http://192.168.1.195:5055/projects/${item?.image}`}
                                 alt=""
                                 effect="blur"
-                                placeholderSrc={ImgProject}
+                                placeholderSrc={`http://192.168.1.195:5055/projects/${item?.image}`}
                                 className='projects-info__body__box__img__item'
                             />
                         </div>
                         <div className="projects-info__body__box__link">
                             <h3>👇Dastur linki:👇</h3>
-                            <a href="">http://Fazo-Software.uz</a>
+                            <a href={item?.link}>{item?.link}</a>
                         </div>
                         <div className="projects-info__body__box__description">
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Earum modi rem perspiciatis harum excepturi, error amet
-                                doloremque suscipit, nobis recusandae ad nemo praesentium
-                                porro similique voluptatem placeat atque, cupiditate ducimus?
+                                {item?.desc}
                             </p>
                         </div>
                     </div>
