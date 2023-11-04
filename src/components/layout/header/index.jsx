@@ -6,14 +6,30 @@ import IconRu from 'assets/images/png/ru.png'
 import IconEng from 'assets/images/png/en.png'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Modal from 'components/menu/modal'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeLanguage } from 'store/system'
+import { useEffect } from 'react'
+import axios from 'axios'
 
 const index = () => {
 
-  const [lang, setLang] = useState({ img: IconUz, title: "Uz" });
-  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [lang, setLang] = useState({ img: IconUz, title: "uz" });
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const [info, setInfo] = useState({})
+
+  const getInfo = async () => {
+    const data = await axios.get("http://192.168.1.195:5055/company-details")
+    setInfo(data?.data[0])
+  }
+
+  useEffect(() => {
+    getInfo()
+    dispatch(changeLanguage(lang.title))
+  }, [lang])
+
+  const { currentLangCode } = useSelector(state => state.system)
 
   const clickMenu = () => {
     document.querySelector('.navigation').classList.toggle('activeMenu')
@@ -40,22 +56,22 @@ const index = () => {
               <div className="navbar__info__phone__img">
                 <img src={IconPhone} alt="" className='navbar__info__phone__img__item' />
               </div>
-              <h2 className="navbar__info__phone__number">+998 (90) 123-45-67</h2>
+              <h2 className="navbar__info__phone__number">{info?.phone}</h2>
             </div>
             <div className="dropdown">
               <button className="dropbtn">
                 <img src={lang.img} className="dropbtn__icon" alt="" />
               </button>
               <div className="dropdown-content">
-                <a href="#" onClick={() => setLang({ img: IconUz, title: "Uz" })}>
+                <a href="#" onClick={() => setLang({ img: IconUz, title: "uz" })}>
                   <img src={IconUz} alt="" />
                   <span>Uz</span>
                 </a>
-                <a href="#" onClick={() => setLang({ img: IconRu, title: "Ru" })}>
+                <a href="#" onClick={() => setLang({ img: IconRu, title: "ru" })}>
                   <img src={IconRu} alt="" />
                   <span>Ru</span>
                 </a>
-                <a href="#" onClick={() => setLang({ img: IconEng, title: "Eng" })}>
+                <a href="#" onClick={() => setLang({ img: IconEng, title: "en" })}>
                   <img src={IconEng} alt="" />
                   <span>Eng</span>
                 </a>
@@ -75,30 +91,54 @@ const index = () => {
           <nav className="menu-nav">
             <ul className="menu-nav-ul">
               <li className="menu-nav-ul-li" onClick={() => { navigate('/portfolio'), removeMenu() }}>
-                <a className="menu-nav-ul-li-a">Portfolio</a>
+                <a className="menu-nav-ul-li-a">
+                  {
+                    currentLangCode === "uz" ? "Portfolio" :
+                      currentLangCode === "ru" ? "Портфолио" :
+                        currentLangCode === "en" ? "Projects" : ""
+                  }
+                </a>
               </li>
               <li className="menu-nav-ul-li" onClick={() => { navigate('/about'), removeMenu() }}>
-                <a className="menu-nav-ul-li-a">Biz xaqimizda</a>
+                <a className="menu-nav-ul-li-a">
+                  {
+                    currentLangCode === "uz" ? "Biz xaqimizda" :
+                      currentLangCode === "ru" ? "О нас" :
+                        currentLangCode === "en" ? "About us" : ""
+                  }
+                </a>
               </li>
               <li className="menu-nav-ul-li" onClick={() => { navigate('/contact'), removeMenu() }}>
-                <a className="menu-nav-ul-li-a">Bog'lanish</a>
+                <a className="menu-nav-ul-li-a">
+                  {
+                    currentLangCode === "uz" ? "Bog'lanish" :
+                      currentLangCode === "ru" ? "Связь" :
+                        currentLangCode === "en" ? "Contact us" : ""
+                  }
+                </a>
               </li>
               <li className="menu-nav-ul-li" onClick={() => { navigate('/services'), removeMenu() }}>
-                <a className="menu-nav-ul-li-a">Xizmatlarimiz</a>
+                <a className="menu-nav-ul-li-a">
+                  {
+                    currentLangCode === "uz" ? "Xizmatlarimiz" :
+                      currentLangCode === "ru" ? "Наши сервисы" :
+                        currentLangCode === "en" ? "Our Services" : ""
+                  }
+                </a>
               </li>
               <li className="menu-nav-ul-li" onClick={() => { navigate('/job'), removeMenu() }}>
-                <a className="menu-nav-ul-li-a">Ish izlayapsizmi?</a>
+                <a className="menu-nav-ul-li-a">
+                  {
+                    currentLangCode === "uz" ? "Ish izlayapsizmi?" :
+                      currentLangCode === "ru" ? "Ты ищешь работу?" :
+                        currentLangCode === "en" ? "Are you looking for a job?" : ""
+                  }
+                </a>
               </li>
             </ul>
           </nav>
         </div>
       </div>
-      {/* {modalIsOpen && <Modal
-        setModalIsOpen={setModalIsOpen}
-        modalIsOpen={modalIsOpen}
-        lang={lang}
-        setLang={setLang}
-      />} */}
     </header>
   )
 }

@@ -2,8 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import config from "config";
 
 const initialState = {
-	currentLangCode: config.DEFAULT_LANGUAGE,
-
+	currentLangCode: "uz",
 };
 
 export const systemSlice = createSlice({

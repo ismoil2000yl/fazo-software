@@ -1,6 +1,7 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 
 const index = () => {
@@ -10,6 +11,19 @@ const index = () => {
     const [email, setEmail] = useState("")
     const [phoneNumber, setPhoneNumber] = useState("")
     const [message, setMessage] = useState("")
+    const [info, setInfo] = useState({})
+    const { currentLangCode } = useSelector(state => state.system)
+
+    const getData = async () => {
+        const data = await axios.get("http://192.168.1.195:5055/company-details")
+        setInfo(data?.data[0])
+    }
+    
+    const prsAddress = JSON.parse(info?.address ? info.address : "{}")
+
+    useEffect(() => {
+        getData()
+    }, [])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -68,37 +82,67 @@ const index = () => {
                     <div className="contact__header__box">
                         <div className="contact__header__box__left">
                             <div className="contact__header__box__left__info">
-                                <h1>kontaktlar</h1>
+                                <h1>
+                                    {
+                                        currentLangCode === "uz" ? "kontaktlar" :
+                                            currentLangCode === "ru" ? "контакты" :
+                                                currentLangCode === "en" ? "contacts" : ""
+                                    }
+                                </h1>
                                 <p>
-                                    Biz sizni saytimizda ko'rishdan xursandmiz va g'oyalaringizni xayotga tatbiq etishga tayyormiz
+                                    {
+                                        currentLangCode === "uz" ? "Biz sizni saytimizda ko'rishdan xursandmiz va g'oyalaringizni xayotga tatbiq etishga tayyormiz" :
+                                            currentLangCode === "ru" ? "Мы рады видеть Вас на нашем сайте и готовы реализовать Ваши идеи" :
+                                                currentLangCode === "en" ? "We are happy to see you on our site and are ready to implement your ideas" : ""
+                                    }
                                 </p>
                             </div>
                         </div>
                         <div className="contact__header__box__right">
                             <div className="contact__header__box__right__info">
-                                <p>Manzil</p>
                                 <p>
-                                    O'zbekiston, Namangan Viloyati, Namangan Shahri,
-                                    Amir Temur koʻchasi, 101-uy. Sanoat(industralniy) kolleji birinchi qavati,
-                                    IT School binosi, 5-xona
+                                    {
+                                        currentLangCode === "uz" ? "Manzil:" :
+                                            currentLangCode === "ru" ? "Адрес:" :
+                                                currentLangCode === "en" ? "Address:" : ""
+                                    }
+                                </p>
+                                <p>
+                                    {
+                                        prsAddress[currentLangCode]
+                                    }
                                 </p>
                                 <div className="contact__header__box__right__info__social">
-                                    <h5>E-mail</h5>
-                                    <h5>info@fazo.uz</h5>
+                                    <h5>
+                                        {
+                                            currentLangCode === "uz" ? "E-mail:" :
+                                                currentLangCode === "ru" ? "Электронная почта:" :
+                                                    currentLangCode === "en" ? "E-mail:" : ""
+                                        }
+                                    </h5>
+                                    <h5>{info?.email}</h5>
                                 </div>
                                 <div className="contact__header__box__right__info__social">
-                                    <h5>Telegram</h5>
-                                    <h5>@fazosoftware</h5>
+                                    <h5>
+                                        {
+                                            currentLangCode === "uz" ? "Telegram:" :
+                                                currentLangCode === "ru" ? "Телеграм:" :
+                                                    currentLangCode === "en" ? "Telegram:" : ""
+                                        }
+                                    </h5>
+                                    <h5>{info?.telegram}</h5>
                                 </div>
                             </div>
                             <div className="contact__header__box__right__number">
                                 <p className="contact__header__box__right__number__title">
-                                    Telefonlar
+                                    {
+                                        currentLangCode === "uz" ? "Tel:" :
+                                            currentLangCode === "ru" ? "Тел:" :
+                                                currentLangCode === "en" ? "Tel:" : ""
+                                    }
                                 </p>
                                 <div className="contact__header__box__right__number__box">
-                                    <h3>(90) 123-45-67</h3>
-                                    <h3>(90) 123-45-67</h3>
-                                    <h3>(90) 123-45-67</h3>
+                                    <h3>{info?.phone}</h3>
                                 </div>
                             </div>
                         </div>
@@ -121,13 +165,22 @@ const index = () => {
                     <div className="contact__box__info">
                         <h2 className='contact__box__info__title'>Fazo Software</h2>
                         <h3 className='contact__box__info__description contact__body__description'>
-                            Sizning loyihangizni batafsil muhokama qilishga tayyormiz...!
-                            Loyihangiz xaqida qisqacha ma'lumot bering. Biz sizga yordam beramiz.
+                            {
+                                currentLangCode === "uz" ? "Sizning loyihangizni batafsil muhokama qilishga tayyormiz...! Loyihangiz xaqida qisqacha ma'lumot bering. Biz sizga yordam beramiz." :
+                                    currentLangCode === "ru" ? "Мы готовы детально обсудить Ваш проект...! Кратко опишите свой проект. Мы поможем тебе." :
+                                        currentLangCode === "en" ? "We are ready to discuss your project in detail...! Briefly describe your project. We will help you." : ""
+                            }
                         </h3>
                     </div>
                     <div className="contact__box__form form">
                         <form onSubmit={handleSubmit}>
-                            <h2 className='form-title'>Bizga xabar yuborish</h2>
+                            <h2 className='form-title'>
+                                {
+                                    currentLangCode === "uz" ? "Bizga xabar yuborish" :
+                                        currentLangCode === "ru" ? "Отправьте нам сообщение" :
+                                            currentLangCode === "en" ? "Send us a message" : ""
+                                }
+                            </h2>
                             <div className="form-fields">
                                 <div className="form-group">
                                     <input
@@ -179,11 +232,18 @@ const index = () => {
                                     />
                                 </div>
                             </div>
-                            <input
+                            {/* <input
                                 type="submit"
                                 value={"Send message"}
                                 className="submit-button"
-                            />
+                            /> */}
+                            <button className='submit-button' type='submit'>
+                                {
+                                    currentLangCode === "uz" ? "Xabar yuborish" :
+                                        currentLangCode === "ru" ? "Отправить сообщение" :
+                                            currentLangCode === "en" ? "Send a message" : ""
+                                }
+                            </button>
                         </form>
                     </div>
                 </div>

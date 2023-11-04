@@ -1,10 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
 const index = () => {
 
     const { name } = useParams()
+    const { currentLangCode } = useSelector(state => state.system)
     const [item, setItem] = useState(null)
 
     useEffect(() => {
@@ -15,6 +17,9 @@ const index = () => {
         const data = await axios.get(`http://192.168.1.195:5055/services/${name}`)
         setItem(data?.data)
     }
+
+    const strTitle = JSON.parse(item?.title ? item.title : "{}")
+    const strDesc = JSON.parse(item?.desc ? item.desc : "{}")
 
     return (
         <div className='service'>
@@ -33,7 +38,7 @@ const index = () => {
                 </ul>
                 <div className="container">
                     <div className="service__header__title">
-                        <h1>{item?.title}</h1>
+                        <h1>{strTitle[currentLangCode]}</h1>
                     </div>
                 </div>
             </div>
@@ -41,7 +46,7 @@ const index = () => {
                 <div className="container">
                     <div className="service__body__description">
                         <p>
-                            {item?.desc}
+                            {strDesc[currentLangCode]}
                         </p>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 const index = () => {
 
@@ -9,6 +10,7 @@ const index = () => {
     const [projectMenu, setProjectMenu] = useState([])
     const [data, setData] = useState([])
     const [btnId, setBtnId] = useState('')
+    const { currentLangCode } = useSelector(state => state.system)
 
     useEffect(() => {
         getProjectData()
@@ -41,7 +43,13 @@ const index = () => {
                 </ul>
                 <div className="container">
                     <div className="portfolio__header__title">
-                        <h1>Fazo Software tomonidan qilingan loyihalar</h1>
+                        <h1>
+                            {
+                                currentLangCode === "uz" ? "Bizning loyihalarimiz" :
+                                    currentLangCode === "ru" ? "Наши проекты" :
+                                        currentLangCode === "en" ? "Our projects" : ""
+                            }
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -49,13 +57,18 @@ const index = () => {
                 <div className="container">
                     <div className="portfolio__body__btns">
                         <button className={`portfolio__body__btns__btn ${btnId ? '' : 'active'}`} onClick={() => setBtnId('')}>
-                            Barcha loyihalar
+                            {
+                                currentLangCode === "uz" ? "Barcha loyihalar" :
+                                    currentLangCode === "ru" ? "Все проекты" :
+                                        currentLangCode === "en" ? "All projects" : ""
+                            }
                         </button>
                         {
                             projectMenu ? projectMenu.map(item => {
+                                const strtitle = JSON.parse(item?.title)
                                 return (
                                     <button onClick={() => setBtnId(item.id)} key={item.id} className={`portfolio__body__btns__btn ${btnId === item.id ? 'active' : ''}`}>
-                                        {item.title}
+                                        {strtitle[currentLangCode]}
                                     </button>
                                 )
                             }) : <h1>Loading...</h1>
@@ -65,6 +78,7 @@ const index = () => {
                         <div className="projects__box">
                             {
                                 data ? data.filter(item => item.serviceId.includes(btnId)).map(item => {
+                                    const strTitle = JSON.parse(item.title)
                                     return (
                                         <div key={item.id} className="projects__box__card" data-aos="flip-right" >
                                             <div className="projects__box__card__img">
@@ -76,9 +90,13 @@ const index = () => {
                                                 />
                                             </div>
                                             <div className="projects__box__card__content">
-                                                <h3 className='projects__box__card__content__title'>{item?.title}</h3>
+                                                <h3 className='projects__box__card__content__title'>
+                                                    {strTitle[currentLangCode]}
+                                                </h3>
                                                 <button className="projects__box__card__content__btn" onClick={() => navigate(`/project-info/${item?.id}`)}>
-                                                    <span className='projects__box__card__content__btn__title'>Batafsil...</span>
+                                                    <span className='projects__box__card__content__btn__title'>
+                                                        Batafsil...
+                                                    </span>
                                                 </button>
                                             </div>
                                         </div>

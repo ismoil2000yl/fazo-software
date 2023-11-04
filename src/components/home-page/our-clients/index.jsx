@@ -7,10 +7,13 @@ import { Autoplay } from 'swiper';
 import { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { api } from 'services';
 
 const index = () => {
 
     const [data, setData] = useState([])
+    const { currentLangCode } = useSelector(state => state.system)
 
     useEffect(() => {
         getData()
@@ -25,10 +28,18 @@ const index = () => {
         <div className='clients-div'>
             <div className="clients">
                 <div className="clients__title" data-aos="fade-up">
-                    <h1>Bizning mijozlarimiz</h1>
+                    <h1>
+                        {
+                            currentLangCode === "uz" ? "Bizning mijozlarimiz" :
+                                currentLangCode === "ru" ? "Наши клиенты" :
+                                    currentLangCode === "en" ? "Our clients" : ""
+                        }
+                    </h1>
                 </div>
                 <div className="clients__box">
                     <Swiper
+                        slidesPerView={1}
+                        spaceBetween={10}
                         autoplay={{
                             delay: 1500,
                             disableOnInteraction: false,
@@ -53,14 +64,14 @@ const index = () => {
                             1199: {
                                 slidesPerView: 5,
                                 spaceBetween: 40,
-                            },
+                            }
                         }}
                     >
                         {
                             data ?
-                                data.map(item => {
+                                data.map((item, idx) => {
                                     return (
-                                        <SwiperSlide key={item.id}>
+                                        <SwiperSlide key={idx}>
                                             <div className="clients__box__item">
                                                 <LazyLoadImage
                                                     src={`http://192.168.1.195:5055/partners/${item?.image}`}
@@ -78,6 +89,8 @@ const index = () => {
                 </div>
                 <div className="clients__box">
                     <Swiper
+                        slidesPerView={1}
+                        spaceBetween={10}
                         autoplay={{
                             delay: 1500,
                             disableOnInteraction: false,
@@ -108,9 +121,9 @@ const index = () => {
                     >
                         {
                             data ?
-                                data.map(item => {
+                                data.map((item, idx) => {
                                     return (
-                                        <SwiperSlide key={item.id}>
+                                        <SwiperSlide key={idx}>
                                             <div className="clients__box__item">
                                                 <LazyLoadImage
                                                     src={`http://192.168.1.195:5055/partners/${item?.image}`}
